@@ -13,7 +13,7 @@ jobs:
           node-version: '14'
       - run: npm install
       - run: npm test
-        working-directory: ./api
+        working-directory: ./backend
 
   webapp-tests:
     runs-on: ubuntu-latest
@@ -25,4 +25,4 @@ jobs:
           node-version: '14'
       - run: npm install
       - run: npm test
-        working-directory: ./webapp
+        working-directory: ./frontend
