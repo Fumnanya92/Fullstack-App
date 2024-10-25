@@ -16,22 +16,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Check Root Directory
+        run: ls -la
+
+      - name: Navigate to Webapp Directory
+        run: |
+          cd frontend/webapp
+          ls -la
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
 
-      - name: Check Directory
-        run: ls -la ./frontend/webapp
-
-      - name: Install dependencies
-        run: npm install
-        working-directory: ./frontend/webapp
-
-      - name: Run tests
-        run: npm test
-        working-directory: ./frontend/webapp
+      - name: Install dependencies and run tests
+        run: |
+          cd frontend/webapp
+          npm install
+          npm test
 
       - name: Build application
-        run: npm run build
-        working-directory: ./frontend/webapp
+        run: |
+          cd frontend/webapp
+          npm run build
