@@ -6,16 +6,4 @@ jobs:
       - name: Build Docker Image
         run: docker build -t webapp-image ./frontend
 
-      - name: Log in to Amazon ECR
-        uses: aws-actions/amazon-ecr-login@v1
-
-      - name: Build, Tag, and Push Docker Image
-        env:
-          AWS_REGION: <your-region>         
-          ECR_REPOSITORY: <your-repo-name>   
-          IMAGE_TAG: ${{ latest }}
-        run: |
-          docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
-          docker tag $ECR_REPOSITORY:$IMAGE_TAG <account-id>.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
-          docker push <account-id>.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
-  
+    
