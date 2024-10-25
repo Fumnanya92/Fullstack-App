@@ -38,12 +38,12 @@ jobs:
 
         run: npm install
 
-        working-directory: ./frontend
+        working-directory: ./frontend/webapp
  
       - name: Run API tests
 
         run: npm test
 
-        working-directory: ./frontend
+        working-directory: ./frontend/webapp
 
  
