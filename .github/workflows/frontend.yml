@@ -45,7 +45,3 @@ jobs:
         run: npm test
     
         working-directory: ./frontend/webapp
-
-        name: Build Docker Image
-        
-        run: docker build -t frontend ./webapp 
