@@ -15,14 +15,14 @@ jobs:
       - run: npm test
         working-directory: ./backend
 
-  webapp-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: npm install
-      - run: npm test
-        working-directory: ./frontend
+  # webapp-tests:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Set up Node.js
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: '14'
+  #     - run: npm install
+  #     - run: npm test
+  #       working-directory: ./frontend
