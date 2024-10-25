@@ -1,43 +1,37 @@
 name: CI Workflow
- 
+
 on:
-
   push:
-
     branches:
-
       - main
-
   pull_request:
-
     branches:
-
       - main
- 
+
 jobs:
-
   frontend-tests:
-
     runs-on: ubuntu-latest
- 
+
     steps:
-
       - name: Checkout code
-
         uses: actions/checkout@v3
- 
+
       - name: Set up Node.js
-
         uses: actions/setup-node@v3
-
         with:
-
           node-version: '16'
- 
-      - name: Run API tests
 
-        run: npm test
-    
+      - name: Check Directory
+        run: ls -la ./frontend/webapp
+
+      - name: Install dependencies
+        run: npm install
         working-directory: ./frontend/webapp
 
-        
+      - name: Run tests
+        run: npm test
+        working-directory: ./frontend/webapp
+
+      - name: Build application
+        run: npm run build
+        working-directory: ./frontend/webapp
