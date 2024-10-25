@@ -13,7 +13,7 @@ jobs:
         env:
           AWS_REGION: <your-region>         
           ECR_REPOSITORY: <your-repo-name>   
-          IMAGE_TAG: ${{ github.sha }}
+          IMAGE_TAG: ${{ latest }}
         run: |
           docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
           docker tag $ECR_REPOSITORY:$IMAGE_TAG <account-id>.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
