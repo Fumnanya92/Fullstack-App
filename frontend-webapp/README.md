@@ -44,5 +44,7 @@ Contributions are always welcome,
 This template is released under the MIT License. Feel free to use it for personal or commercial projects. 
 <br> You may credit me as well 😊
 
+Thank you
+
 
 
