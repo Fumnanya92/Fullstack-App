@@ -42,4 +42,4 @@ jobs:
         
       - name: Build Docker Image
         run: |
-          docker build -t webapp-image ./frontend-webapp
+          docker build -t webapp-image -f ./frontend-webapp/Dockerfile .
